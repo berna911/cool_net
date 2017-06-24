@@ -1,0 +1,191 @@
+body
+{
+   background: #383A3B;
+}
+
+#bod
+{
+	margin: auto;
+}
+
+#bod > div > div
+{
+	color: #fff;
+	padding: 5px;
+	margin-top: 10px;
+}
+
+#left_menu > ul > a > li
+{
+	padding: 5px;
+	display: block;
+	margin-left: -40px;
+	color: #fff;
+}
+
+#page_avatar
+{
+	background: #2C2D2E;
+}
+
+#page_avatar > img
+{
+	min-height: 100%;
+	min-width: 100%;
+	margin: 5px;
+	height: 250px;
+}
+
+#page_addPhoto
+{
+	margin: auto;
+}
+
+#page_info
+{
+	height: 400px;
+	background: #2C2D2E;
+}
+
+#page_4_photo
+{
+	background: #2C2D2E;
+}
+
+#page_add_wall
+{
+	background: #2C2D2E;
+}
+
+#page_reit
+{
+	background: #2C2D2E;
+}
+
+#page_friends
+{
+	background: #2C2D2E;
+}
+
+#page_friends > ul
+{
+	margin-left: -40px;
+}
+
+#page_friends > ul > li
+{
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+#page_friends > ul > li > img
+{
+	height: 60px;
+}
+
+#page_friends_online
+{
+	background: #2C2D2E;
+}
+
+#page_friends_online > ul
+{
+	margin-left: -40px;
+}
+
+#page_friends_online > ul > li
+{
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+#page_friends_online > ul > li > img
+{
+	height: 60px;
+}
+
+#page_gifts
+{
+	background: #2C2D2E;
+}
+
+#page_gifts > ul
+{
+	margin-left: -40px;
+}
+
+#page_gifts > ul > li
+{
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+#page_gifts > ul > li > img
+{
+	height: 60px;
+}
+
+#page_interest_pages
+{
+	background: #2C2D2E;
+}
+
+#page_interest_pages > ul
+{
+	margin-left: -40px;
+}
+
+#page_interest_pages > ul > li
+{
+	display: block;
+}
+
+#page_interest_pages > ul > li > img
+{
+	height: 40px;
+}
+
+#page_photo
+{
+	background: #2C2D2E;
+}
+
+#page_photo > ul
+{
+	margin-left: -40px;
+}
+
+#page_photo > ul > li
+{
+	display: block;
+}
+
+#page_photo > ul > li > img
+{
+	height: 100px;
+}
+
+#page_video
+{
+	background: #2C2D2E;
+}
+
+#page_video > ul
+{
+	margin-left: -40px;
+}
+
+#page_video > ul > li
+{
+	display: block;
+}
+
+#page_video > ul > li > img
+{
+	height: 100px;
+}
+
+#page_wall
+{
+	background: #2C2D2E;
+}
