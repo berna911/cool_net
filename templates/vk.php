@@ -7,8 +7,8 @@
 	<link rel="stylesheet" href="./css/vk.css">
 </head>
 <body>
-       <div id="top_header" style="background: #2C2D2E; margin: auto; width:58.33333333%;">fwe</div>
-       <div style="margin: auto; width:58.33333333%" id="bod">
+       <div id="top_header" style="background: #2C2D2E; margin: auto; width:66.66666667%;">fwe</div>
+       <div style="margin: auto; width:66.66666667%" id="bod">
 		 <div id="left_menu" class="col-md-2">
 		 	<ul>
 		 		<a href="/my_page"><li>Моя сторінка</li></a>

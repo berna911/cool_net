@@ -4,14 +4,29 @@ class Model_my_page extends Model
 	public function get_data()
 	{
 
-		$user = DB::getInstance() -> query('SELECT * FROM us_main');
-		$users_sr = DB::getInstance() -> query('SELECT * FROM us_srObr WHERE user_id = '.$user -> id);
-		$users_high = DB::getInstance() -> query('SELECT * FROM us_highObr WHERE user_id = '.$user -> id);
-		$users_career = DB::getInstance() -> query('SELECT * FROM us_career WHERE user_id = '.$user -> id);
-		$users_war = DB::getInstance() -> query('SELECT * FROM us_war WHERE user_id = '.$user -> id);
+		$user = array();
+		$users_sr = array();
+		$users_high = array();
+		$users_career = array();
+		$users_war = array();
+
+		$users = DB::getInstance() -> query('SELECT * FROM us_main WHERE id = 3');
+		foreach ($users -> results() as $user);
+
+		$user_sr = DB::getInstance() -> query('SELECT * FROM us_srObr WHERE user_id = '.$user -> id);
+		foreach ($user_sr -> results() as $users_sr);
+
+		$user_high = DB::getInstance() -> query('SELECT * FROM us_highObr WHERE user_id = '.$user -> id);
+		foreach ($user_high -> results() as $users_high);
+
+		$user_career = DB::getInstance() -> query('SELECT * FROM us_career WHERE user_id = '.$user -> id);
+		foreach ($user_career -> results() as $users_career);
+
+		$user_war = DB::getInstance() -> query('SELECT * FROM us_war WHERE user_id = '.$user -> id);
+		foreach ($user_war -> results() as $users_war);
 
 		$data = array(
-										  'id' => $user -> main_name,
+										  'id' => $user -> id,
 										  'sys_email' => $user -> sys_email,
 										  'sys_telephone' => $user -> sys_telephone,
 										  'sys_link' => $user -> sys_link,
@@ -54,7 +69,7 @@ class Model_my_page extends Model
 										  'lifePos_smoke' => $user -> lifePos_smoke,
 										  'lifePos_alco' => $user -> lifePos_alco,
 										  'lifePos_vdoh' => $user -> lifePos_vdoh,
-										  'country' => $users_sr -> country,
+										  'sr_country' => $users_sr -> sr_country,
 						  				  'sr_school' => $users_sr -> sr_school,
 						   				  'sr_start' => $users_sr -> sr_start,
 						   				  'sr_end' => $users_sr -> sr_end,
@@ -78,7 +93,6 @@ class Model_my_page extends Model
 										  'war_start' => $users_war -> war_start,
 										  'war_end' => $users_war -> war_end
 										);
-
 		return $data;
 	}
 }
