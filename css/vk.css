@@ -193,3 +193,44 @@ body
 {
 	background: #2C2D2E;
 }
+
+#friends_cont
+{
+	margin-left: -10px;
+	margin-right: 10px;
+	background: #2C2D2E;
+}
+
+#friends_set
+{
+	background: #2C2D2E;
+}
+
+#friends_vozm
+{
+	background: #2C2D2E;
+}
+
+#news_add
+{
+	margin-right: 10px;
+	background: #2C2D2E;
+	margin-left: -10px;
+}
+
+#news_list
+{
+	margin-right: 10px;
+	background: #2C2D2E;
+	margin-left: -10px;
+}
+
+#news_vozm
+{
+	background: #2C2D2E;
+}
+
+#news_set
+{
+	background: #2C2D2E;
+}

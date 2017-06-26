@@ -13,8 +13,8 @@
 		 	<ul>
 		 		<a href="/my_page"><li>Моя сторінка</li></a>
 		 		<a href="/friends"><li>Друзі</li></a>
-		 		<a href=""><li>Новини</li></a>
-		 		<a href=""><li>Повідомлення</li></a>
+		 		<a href="/news"><li>Новини</li></a>
+		 		<a href="/dialogs"><li>Повідомлення</li></a>
 		 		<a href=""><li>Спільноти</li></a>
 		 		<a href=""><li>Музика</li></a>
 		 		<a href=""><li>Відео</li></a>
