@@ -64,11 +64,11 @@
 <div id="page_right" style="float: right;" class="col-md-8">
 <div id="page_info" class="col-md-12">
     <div class="col-md-12" id="page_info_top">
-    	<div id="page_info_name"><?php echo $data['main_name']; ?> <?php echo $data['main_lastName']; ?></div>
-    	<div id="page_info_lastOn">Був на сайті 20 хвилин назад</div>
+    	<div id="page_info_name" class="col-md-5"><?php echo $data['main_name']; ?> <?php echo $data['main_lastName']; ?></div>
+    	<div id="page_info_lastOn" class="col-md-7">Був на сайті 20 хвилин назад</div>
     </div>
-    <div class="col-md-12" id="status">Hi guys!!!</div>
-    <div id="page_info_onshow">
+    <div class="col-md-12" id="page_info_status">Hi guys!!!</div>
+    <div id="page_info_onshow" class="col-md-12">
     	<label>День народження: </label><label><?php echo $data['']; ?></label><br />
     	<label>Сімейне положення: </label><label><?php echo $data['']; ?></label><br />
     	<label>Місто: </label><label><?php echo $data['']; ?></label><br />
@@ -78,7 +78,7 @@
     <button id="page_info_more" class="col-md-12">Показати більше інформації</button>
     	<div id="page_info_unshow">
     	<div id="page_info_main">
-    		<label>Основна інформація</label>
+    		<label class="page_info_title col-md-12"">Основна інформація</label><br />
 
     		<label>Рідне місто: </label><label><?php echo $data['']; ?></label><br />
     		<label>Мови: </label><label><?php echo $data['']; ?></label><br />
@@ -89,7 +89,7 @@
     		<label>Онуки: </label><label><?php echo $data['']; ?></label><br />
     	</div>
     	<div id="page_info_cont">
-    		<label>Контактна інформація</label>
+    		<label class="page_info_title col-md-12"">Контактна інформація</label><br />
 
     		<label>Місце знаходження: </label><label><?php echo $data['']; ?></label><br />
     		<label>Телефон: </label><label><?php echo $data['']; ?></label><br />
@@ -98,12 +98,12 @@
     		<label>Веб-сайт: </label><label><?php echo $data['']; ?></label><br />
     	</div>
     	<div id="page_info_career">
-    		<label>Кар'єра</label>
+    		<label class="page_info_title col-md-12"">Кар'єра</label><br />
 
     		<label>Місце роботи: </label><label><?php echo $data['']; ?></label><br />
     	</div>
    		 <div id="page_info_obr">
-    		<label>Навчання</label>
+    		<label class="page_info_title col-md-12"">Навчання</label><br />
 
     		<label>Внз: </label><label><?php echo $data['']; ?></label><br />
     		<label>Факультет: </label><label><?php echo $data['']; ?></label><br />
@@ -114,12 +114,14 @@
     	</div>
 
     	<div id="page_info_war">
-    		<label>Воєнна служба</label>
+    		<label class="page_info_title col-md-12"">Воєнна служба</label><br />
 
     		<label>Військова частина: </label><label><?php echo $data['']; ?></label>	
     	</div>
 
     	<div id="page_info_lifePos">
+        <label class="page_info_title col-md-12"">Життєва позиція</label><br />
+
     		<label>Політика: </label><label><?php echo $data['']; ?></label><br />
     		<label>Світогляд: </label><label><?php echo $data['']; ?></label><br />
     		<label>Життєва позиція: </label><label><?php echo $data['']; ?></label><br />
@@ -130,7 +132,7 @@
     		<label>Що вдохновляє: </label><label><?php echo $data['']; ?></label><br />
    	 	</div>
    	 	<div id="page_info_int">
-   	 		<label>Особиста інформація</label>
+   	 		<label class="page_info_title col-md-12">Особиста інформація</label><br />
 
    	 		<label>Діяльність: </label><label><?php echo $data['']; ?></label><br />
     		<label>Інтереси: </label><label><?php echo $data['']; ?></label><br />
@@ -153,26 +155,29 @@
 </div>
 <div id="page_add_wall" class="col-md-12">
 	<ul>
-		<li><img src="" alt="Img" /></li>
-		<li><input type="text" placeholder="Додати запис"></li>
-		<li><i>P</i></li>
-		<li><i>V</i></li>
-		<li><i>M</i></li>
-	</ul>
-</div>
-<div id="page_wall_set">
-	<ul>
-		<li>Всі записи</li>
-		<li>Записи <?php echo $data['main_name']; ?></li>
-		<li><i>S</i></li>
+		<li class="col-md-1"><img src="" alt="Img" /></li>
+		<li class="col-md-9"><input type="text" placeholder="Додати запис"></li>
+		<li class="col-md-2"><i>P</i><i>V</i><i>M</i></li>
 	</ul>
 </div>
 <div id="page_wall" class="col-md-12">
-	<div class="page_wall_avatar"><img src="" alt="Image not"></div>
-	<div id="page_wall_auth"><?php echo $data['main_name']; ?> <?php echo $data['main_lastName']; ?></div>
-	<div id="page_wall_text">Запис</div>
-	<div id="page_wall_likes">Подобається <?php echo $data['']; ?></div>
-	<div id="page_wall_comments">Коментувати</div>
-	<div id="page_wall_toMe"><i>A</i></div>
+    <div id="page_wall_set">
+        <ul>
+            <li>Всі записи</li>
+            <li>Записи <?php echo $data['main_name']; ?></li>
+            <li id="page_info_wall_set_s"><i>S</i></li>
+        </ul>
+    </div>
+	<div id="page_wall_avatar" class="col-md-2"><img src="" alt="Image not"></div>
+	<div id="page_wall_authDate" class="col-md-6"><?php echo $data['main_name']; ?> <?php echo $data['main_lastName']; ?> <br /> 27 червня в 1:33</div>
+    <div id="page_wall_drop">D</div>
+	<div id="page_wall_text" class="col-md-12">Запис</div>
+	<div id="page_wall_bottom" class="col-md-12">
+        <ul>
+            <li>Подобається</li>
+            <li>Коментувати</li>
+            <li>А</li>
+        </ul>
+	</div>
 </div>
 </div>

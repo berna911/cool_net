@@ -38,7 +38,13 @@ body
 
 #page_addPhoto
 {
-	margin: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 25px;
+	background: gray;
+	color: #fff;
+	text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+	border: 1px solid #fff;
 }
 
 #page_info
@@ -46,9 +52,60 @@ body
 	background: #2C2D2E;
 }
 
+#page_info_name
+{
+	margin-left: -30px;
+	font-size: 22px;
+	text-shadow: 1px 1px 1px gray, 0 0 1em gray;
+}
+
+#page_info_lastOn
+{
+	color: gray;
+	font-size: 12px;
+	margin-top: 10px;
+}
+
+#page_info_status
+{
+	margin-left: -15px;
+	font-size: 13px;
+}
+
+#page_info_onshow
+{
+	margin-top: 20px;
+	padding-top: 15px;
+	border-top: 1px solid gray;
+	margin-bottom: 20px;
+}
+
+#page_info_more
+{
+	background: gray;
+	color: #fff;
+	text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+	border: 1px solid #fff;
+}
+
 #page_info_unshow
 {
 	display: none;
+}
+
+#page_info_unshow > div
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid gray;
+}
+
+.page_info_title
+{
+	margin-bottom: 5px;
+	margin-top: 10px;
+	font-size: 17px;
+	text-shadow: 1px 1px 1px gray, 0 0 1em gray;
 }
 
 #page_4_photo
@@ -56,9 +113,32 @@ body
 	background: #2C2D2E;
 }
 
+#page_4_photo > img
+{
+	height: 70px;
+}
+
 #page_add_wall
 {
+	padding: 5px;
 	background: #2C2D2E;
+}
+
+#page_add_wall > ul
+{
+	margin-left: -40px;
+}
+
+#page_add_wall > ul > li
+{
+	display: inline-block;
+}
+
+#page_add_wall > ul > li > input
+{
+	background: #2C2D2E;
+	color: #fff;
+	width: 100%;
 }
 
 #page_reit
@@ -192,6 +272,60 @@ body
 #page_wall
 {
 	background: #2C2D2E;
+}
+
+#page_wall_set
+{
+	border-bottom: 1px solid gray;
+	margin-bottom: 10px;
+}
+
+#page_wall_set > ul
+{
+	margin-left: -40px;
+}
+
+#page_wall_set > ul > li
+{
+	margin-left: 5px;
+	display: inline-block;
+}
+
+#page_info_wall_set_s
+{
+	margin-right: 10px;
+	float: right;
+}
+
+#page_wall_drop
+{
+	float: right;
+	margin-right: 10px;
+}
+
+#page_wall_avatar > img
+{
+	height: 40px;
+}
+
+#page_wall_text
+{
+	margin-top: 15px;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid gray;
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+}
+
+#page_wall_bottom > ul
+{
+	margin-left: -40px;
+}
+
+#page_wall_bottom > ul > li
+{
+	display: inline-block;
 }
 
 #friends_cont
