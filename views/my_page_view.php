@@ -76,9 +76,9 @@
     	<label>Веб-сайт: </label><label><?php echo $data['']; ?></label><br />
     </div>
     <button id="page_info_more" class="col-md-12">Показати більше інформації</button>
-    	<div id="page_info_unshow">
+    	<div id="page_info_unshow" class="col-md-12">
     	<div id="page_info_main">
-    		<label class="page_info_title col-md-12"">Основна інформація</label><br />
+    		<label class="page_info_title">Основна інформація</label><br />
 
     		<label>Рідне місто: </label><label><?php echo $data['']; ?></label><br />
     		<label>Мови: </label><label><?php echo $data['']; ?></label><br />
@@ -89,7 +89,7 @@
     		<label>Онуки: </label><label><?php echo $data['']; ?></label><br />
     	</div>
     	<div id="page_info_cont">
-    		<label class="page_info_title col-md-12"">Контактна інформація</label><br />
+    		<label class="page_info_title">Контактна інформація</label><br />
 
     		<label>Місце знаходження: </label><label><?php echo $data['']; ?></label><br />
     		<label>Телефон: </label><label><?php echo $data['']; ?></label><br />
@@ -98,12 +98,12 @@
     		<label>Веб-сайт: </label><label><?php echo $data['']; ?></label><br />
     	</div>
     	<div id="page_info_career">
-    		<label class="page_info_title col-md-12"">Кар'єра</label><br />
+    		<label class="page_info_title">Кар'єра</label><br />
 
     		<label>Місце роботи: </label><label><?php echo $data['']; ?></label><br />
     	</div>
    		 <div id="page_info_obr">
-    		<label class="page_info_title col-md-12"">Навчання</label><br />
+    		<label class="page_info_title">Навчання</label><br />
 
     		<label>Внз: </label><label><?php echo $data['']; ?></label><br />
     		<label>Факультет: </label><label><?php echo $data['']; ?></label><br />
@@ -114,13 +114,13 @@
     	</div>
 
     	<div id="page_info_war">
-    		<label class="page_info_title col-md-12"">Воєнна служба</label><br />
+    		<label class="page_info_title">Воєнна служба</label><br />
 
     		<label>Військова частина: </label><label><?php echo $data['']; ?></label>	
     	</div>
 
     	<div id="page_info_lifePos">
-        <label class="page_info_title col-md-12"">Життєва позиція</label><br />
+        <label class="page_info_title">Життєва позиція</label><br />
 
     		<label>Політика: </label><label><?php echo $data['']; ?></label><br />
     		<label>Світогляд: </label><label><?php echo $data['']; ?></label><br />
@@ -132,7 +132,7 @@
     		<label>Що вдохновляє: </label><label><?php echo $data['']; ?></label><br />
    	 	</div>
    	 	<div id="page_info_int">
-   	 		<label class="page_info_title col-md-12">Особиста інформація</label><br />
+   	 		<label class="page_info_title">Особиста інформація</label><br />
 
    	 		<label>Діяльність: </label><label><?php echo $data['']; ?></label><br />
     		<label>Інтереси: </label><label><?php echo $data['']; ?></label><br />
