@@ -10,7 +10,7 @@
        	 <div id="top_header_logo"><img src="" alt="Image not found!"></div>
        	 <div id="top_header_menu">
        	 	<ul>
-       	 		<li><a>Пошук</a></li>
+       	 		<li><a href="friends_search">Пошук</a></li>
        	 		<li><a>Карти</a></li>
        	 		<li><a>Підтримка</a></li>
        	 		<li><a>Вийти</a></li>

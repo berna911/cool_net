@@ -9,7 +9,7 @@ class Controller_friends_search extends Controller
 	function action_default()
 	{	
 		$data = $this->model->get_data();
-		$this->view->generate('login.php', 'vk.php', $data);
+		$this->view->generate('friends_search_view.php', 'vk.php', $data);
 	}
 }
 ?>

@@ -183,6 +183,11 @@ body
 	width: 100%;
 }
 
+#page_add_wall > ul > li > img
+{
+	height: 25px;
+}
+
 #page_reit
 {
 	background: #2C2D2E;
@@ -206,7 +211,7 @@ body
 
 #page_friends > ul > li > img
 {
-	height: 60px;
+	height: 35px;
 }
 
 #page_friends_online
@@ -227,7 +232,7 @@ body
 
 #page_friends_online > ul > li > img
 {
-	height: 60px;
+	height: 35px;
 }
 
 #page_gifts
@@ -248,7 +253,7 @@ body
 
 #page_gifts > ul > li > img
 {
-	height: 60px;
+	height: 35px;
 }
 
 #page_interest_pages
@@ -263,6 +268,7 @@ body
 
 #page_interest_pages > ul > li
 {
+	margin-bottom: 10px;
 	display: block;
 }
 
@@ -283,6 +289,7 @@ body
 
 #page_photo > ul > li
 {
+	margin-bottom: 10px;
 	display: block;
 }
 
@@ -303,6 +310,7 @@ body
 
 #page_video > ul > li
 {
+	margin-bottom: 10px;
 	display: block;
 }
 

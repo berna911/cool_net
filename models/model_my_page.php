@@ -30,6 +30,7 @@ class Model_my_page extends Model
 										  'sys_email' => $user -> sys_email,
 										  'sys_telephone' => $user -> sys_telephone,
 										  'sys_link' => $user -> sys_link,
+										  'sys_avatar' => $user -> sys_avatar,
 										  'main_name' => $user -> main_name,
 										  'main_lastName' => $user -> 	main_lastName,
 										  'main_sex' => $user -> main_sex,
