@@ -1,3 +1,4 @@
+<title>Новини</title>
 <div id="news_add" class="col-md-8">
 		<li class="col-md-1 news_add_li"><img src="" alt="Img" /></li>
 		<li class="col-md-9"><input type="text" placeholder="Додати запис"></li>

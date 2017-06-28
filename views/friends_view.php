@@ -1,3 +1,4 @@
+<title>Друзі</title>
 <div id="friends_cont" class="col-md-8">
 	<div id="friends_top">
 		<ul>

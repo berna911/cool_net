@@ -1,3 +1,4 @@
+<title>Max Berna</title>
 <div id="page_left" class="col-md-4">
 <div id="page_avatar" class="col-md-12">
 	<img src="./img/header.jpg" alt="Image not found" class="col-md-12">

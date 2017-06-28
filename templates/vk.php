@@ -2,7 +2,6 @@
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
-	<title>Главная</title>
 	<link rel="stylesheet" href="./libs/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/vk.css">
 </head>
@@ -25,9 +24,9 @@
 		 		<a href="/news"><li>Новини</li></a>
 		 		<a href="/dialogs"><li>Повідомлення</li></a>
 		 		<a href="/friends"><li>Друзі</li></a>
-		 		<a href=""><li>Спільноти</li></a>
-		 		<a href=""><li>Фотографії</li></a>
-		 		<a href=""><li>Музика</li></a>
+		 		<a href="/groups"><li>Спільноти</li></a>
+		 		<a href="/albums"><li>Фотографії</li></a>
+		 		<a href="/audio"><li>Музика</li></a>
 		 		<a href=""><li>Відео</li></a>
 		 		<a href=""><li>Ігри</li></a>
 		 		<a href=""><li>Налаштування</li></a>
