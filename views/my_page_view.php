@@ -14,14 +14,14 @@
 	</ul>
 </div>
 <div id="page_friends" class="col-md-12">
-	<label>Друзі </label><br />
+	<label>Друзі </label><label style="color: #EEEEEE;"><?php echo $data['user_friends_count'] - 1; ?></label><br />
 	<ul>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
+        <?php  
+            for($i = 0; $i < $data['user_friends_count'] - 1; $i++)
+            {
+        ?>
+		  <li class="col-md-4"><img src="./img/<?php echo $data['user_friends_avatar'][$i]; ?>" alt="Image not found"><label><?php echo $data['user_friends_name'][$i]; ?></label></li>
+		<?php } ?>
 	</ul>
 </div>
 <div id="page_friends_online" class="col-md-12">
@@ -68,7 +68,7 @@
     	<div id="page_info_name" class="col-md-5"><?php echo $data['main_name']; ?> <?php echo $data['main_lastName']; ?></div>
     	<div id="page_info_lastOn" class="col-md-7">Був на сайті 20 хвилин назад</div>
     </div>
-    <div class="col-md-12" id="page_info_status">Hi guys!!!</div>
+    <div class="col-md-12" id="page_info_status"><?php echo $data['main_status']; ?></div>
     <div id="page_info_onshow" class="col-md-12">
     	<label class="col-md-6">День народження: </label><label class="col-md-6"><?php echo $data['main_birthdate']; ?></label><br />
     	<label class="col-md-6">Сімейне положення: </label><label class="col-md-6"><?php echo $data['main_relationship']; ?></label><br />
@@ -161,24 +161,39 @@
 		<li class="col-md-2"><i>P</i><i>V</i><i>M</i></li>
 	</ul>
 </div>
+
 <div id="page_wall" class="col-md-12">
-    <div id="page_wall_set">
-        <ul>
-            <li>Всі записи</li>
-            <li>Записи <?php echo $data['main_name']; ?></li>
-            <li id="page_info_wall_set_s"><i>S</i></li>
-        </ul>
-    </div>
+    <?php  
+    for($i = 0; $i < $data['user_wall_count']; $i++)
+    {
+    ?>
+    <div class="page_wall_view col-md-12">
+    <?php 
+        if($i == 0)
+        {
+            echo '
+                <div id="page_wall_set">
+                     <ul>
+                            <li>Всі записи</li>
+                            <li>Записи <?php echo $data["main_name"]; ?></li>
+                            <li id="page_info_wall_set_s"><i>S</i></li>
+                     </ul>
+                </div>
+            ';
+        }
+    ?>
 	<div id="page_wall_avatar" class="col-md-2"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not"></div>
-	<div id="page_wall_authDate" class="col-md-6"><?php echo $data['main_name']; ?> <?php echo $data['main_lastName']; ?> <br /> 27 червня в 1:33</div>
+	<div id="page_wall_authDate" class="col-md-6"><?php echo $data['main_name']; ?> <?php echo $data['main_lastName']; ?> <br /> <?php echo $data['user_wall_date'][$i]; ?></div>
     <div id="page_wall_drop">D</div>
-	<div id="page_wall_text" class="col-md-12">Запис</div>
+	<div id="page_wall_text" class="col-md-12"><?php echo $data['user_wall_text'][$i]; ?></div>
 	<div id="page_wall_bottom" class="col-md-12">
         <ul>
-            <li>Подобається</li>
+            <li>Подобається <?php echo $data['user_wall_likes'][$i]; ?></li>
             <li>Коментувати</li>
             <li>А</li>
         </ul>
 	</div>
+    </div>
+    <?php } ?>
 </div>
 </div>

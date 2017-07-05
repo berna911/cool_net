@@ -4,11 +4,15 @@ class Model_my_page extends Model
 	public function get_data()
 	{
 
+		$data = array();
 		$user = array();
 		$users_sr = array();
 		$users_high = array();
 		$users_career = array();
 		$users_war = array();
+		$user_fr_single;
+		$user_fr = array();
+		$user_fr_main;
 
 		$users = DB::getInstance() -> query('SELECT * FROM us_main WHERE id = 3');
 		foreach ($users -> results() as $user);
@@ -25,12 +29,18 @@ class Model_my_page extends Model
 		$user_war = DB::getInstance() -> query('SELECT * FROM us_war WHERE user_id = '.$user -> id);
 		foreach ($user_war -> results() as $users_war);
 
+		$user_friends = DB::getInstance() -> query('SELECT rel_friends FROM us_main WHERE id=3 LIMIT 6');
+		foreach ($user_friends -> results() as $friends) {
+			$user_fr_single = $friends -> rel_friends;
+		}
+
 		$data = array(
 										  'id' => $user -> id,
 										  'sys_email' => $user -> sys_email,
 										  'sys_telephone' => $user -> sys_telephone,
 										  'sys_link' => $user -> sys_link,
 										  'sys_avatar' => $user -> sys_avatar,
+										  'main_status' => $user -> main_status,
 										  'main_name' => $user -> main_name,
 										  'main_lastName' => $user -> 	main_lastName,
 										  'main_sex' => $user -> main_sex,
@@ -92,8 +102,41 @@ class Model_my_page extends Model
 						   				  'war_country' => $users_war -> war_country,
 										  'war_chast' => $users_war -> war_chast,
 										  'war_start' => $users_war -> war_start,
-										  'war_end' => $users_war -> war_end
+										  'war_end' => $users_war -> war_end,
+										  'user_friends_name' => array(),
+										  'user_friends_avatar' => array(),
+										  'user_friends_count' => 0,
+										  'user_wall_author' => array(),
+										  'user_wall_date' => array(),
+										  'user_wall_text' => array(),
+										  'user_wall_likes' => array(),
+										  'user_wall_count' => 0,
 										);
+		
+			$user_fr = explode(";", $user_fr_single);
+
+			$data['user_friends_count'] = count($user_fr);
+
+			for($i = 0; $i < count($user_fr) - 1; $i++)
+			{
+				$user_fr_main[$i] = DB::getInstance() -> query('SELECT main_name,sys_avatar FROM us_main WHERE id='.$user_fr[$i]);
+				foreach ($user_fr_main[$i] -> results() as $user_fr_mainn) {
+					$data['user_friends_name'][$i] = $user_fr_mainn -> main_name;
+					$data['user_friends_avatar'][$i] = $user_fr_mainn -> sys_avatar;
+				}
+			}
+
+			$user_wall = DB::getInstance() -> query('SELECT * FROM us_posts WHERE author = 3') -> results();
+
+			$data['user_wall_count'] = DB::getInstance() -> query('SELECT * FROM us_posts WHERE author = 3') -> count();
+
+			for ($i = 0; $i < $data['user_wall_count']; $i++) {
+					$data['user_wall_author'][$i] = $user_wall -> author;
+					$data['user_wall_date'][$i] = $user_wall[0] -> date;
+					$data['user_wall_text'][$i] = $user_wall -> text;
+					$data['user_wall_likes'][$i] = $user_wall -> likes;
+			}
+
 		return $data;
 	}
 }
