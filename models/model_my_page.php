@@ -14,6 +14,11 @@ class Model_my_page extends Model
 		$user_fr = array();
 		$user_fr_main;
 
+		$user_wall_date;
+		$user_wall_author;
+		$user_wall_date;
+		$user_wall_likes;
+
 		$users = DB::getInstance() -> query('SELECT * FROM us_main WHERE id = 3');
 		foreach ($users -> results() as $user);
 
@@ -29,10 +34,25 @@ class Model_my_page extends Model
 		$user_war = DB::getInstance() -> query('SELECT * FROM us_war WHERE user_id = '.$user -> id);
 		foreach ($user_war -> results() as $users_war);
 
-		$user_friends = DB::getInstance() -> query('SELECT rel_friends FROM us_main WHERE id=3 LIMIT 6');
+		$user_friends = DB::getInstance() -> query('SELECT rel_friends FROM us_main WHERE id=3');
 		foreach ($user_friends -> results() as $friends) {
 			$user_fr_single = $friends -> rel_friends;
 		}
+
+		$counter = DB::getInstance() -> query('SELECT * FROM us_posts WHERE author = 3') -> count();
+		$user_wall = DB::getInstance() -> query('SELECT * FROM us_posts WHERE author = 3');
+		
+		for($i = 0; $i < $counter; $i++)
+		{
+			foreach ($user_wall -> results() as $walls)
+			{
+				$user_walls[$i]['date'] = $walls -> date;
+				$user_walls[$i]['author'] = $walls -> author;
+				$user_walls[$i]['text'] = $walls -> text;
+				$user_walls[$i]['likes'] = $walls -> likes;
+			}
+		}
+	
 
 		$data = array(
 										  'id' => $user -> id,
@@ -110,9 +130,17 @@ class Model_my_page extends Model
 										  'user_wall_date' => array(),
 										  'user_wall_text' => array(),
 										  'user_wall_likes' => array(),
-										  'user_wall_count' => 0,
+										  'user_wall_count' => $counter
 										);
-		
+
+			for($i = 0; $i < $counter; $i++)
+			{
+					$data['user_wall_author'][$i] = $user_walls[$i]['author'];
+					$data['user_wall_date'][$i] = $user_walls[$i]['date'];
+					$data['user_wall_text'][$i] = $user_walls[$i]['text'];
+					$data['user_wall_likes'][$i] = $user_walls[$i]['likes'];
+			}
+
 			$user_fr = explode(";", $user_fr_single);
 
 			$data['user_friends_count'] = count($user_fr);
@@ -126,16 +154,7 @@ class Model_my_page extends Model
 				}
 			}
 
-			$user_wall = DB::getInstance() -> query('SELECT * FROM us_posts WHERE author = 3') -> results();
-
-			$data['user_wall_count'] = DB::getInstance() -> query('SELECT * FROM us_posts WHERE author = 3') -> count();
-
-			for ($i = 0; $i < $data['user_wall_count']; $i++) {
-					$data['user_wall_author'][$i] = $user_wall -> author;
-					$data['user_wall_date'][$i] = $user_wall[0] -> date;
-					$data['user_wall_text'][$i] = $user_wall -> text;
-					$data['user_wall_likes'][$i] = $user_wall -> likes;
-			}
+			
 
 		return $data;
 	}

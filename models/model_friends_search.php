@@ -3,10 +3,6 @@ class Model_friends_search extends Model
 {
 	public function get_data()
 	{
-		$peoples;
-		$names;
-		$lastNames;
-		$avatars;
 
 		$people = DB::getInstance() -> query('SELECT id, main_status, main_name, main_lastName, sys_avatar FROM us_main') -> results();
 		$counter = DB::getInstance() -> query('SELECT id FROM us_main') -> count();

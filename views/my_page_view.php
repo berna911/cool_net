@@ -182,7 +182,7 @@
             ';
         }
     ?>
-	<div id="page_wall_avatar" class="col-md-2"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not"></div>
+	<div id="page_wall_avatar" class="col-md-2"><a href="my_page/<?php echo $i; ?>"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not"></a></div>
 	<div id="page_wall_authDate" class="col-md-6"><?php echo $data['main_name']; ?> <?php echo $data['main_lastName']; ?> <br /> <?php echo $data['user_wall_date'][$i]; ?></div>
     <div id="page_wall_drop">D</div>
 	<div id="page_wall_text" class="col-md-12"><?php echo $data['user_wall_text'][$i]; ?></div>

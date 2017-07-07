@@ -356,7 +356,7 @@ body
 	margin-right: 10px;
 }
 
-#page_wall_avatar > img
+#page_wall_avatar > a > img
 {
 	height: 40px;
 }
