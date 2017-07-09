@@ -530,7 +530,6 @@ body
 
 #news_add
 {
-	padding: 10px;
 	margin-right: 10px;
 	background: #2C2D2E;
 	margin-left: -10px;
@@ -654,7 +653,7 @@ body
 
 .dialogs_list_my_ava > img
 {
-	height: 50px;
+	height: 40px;
 }
 
 #dialogs_set

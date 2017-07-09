@@ -1,16 +1,16 @@
 <title>Max Berna</title>
 <div id="page_left" class="col-md-4">
 <div id="page_avatar" class="col-md-12">
-	<img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found" class="col-md-12">
+	<img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found" class="col-md-12">
 	<input type="button" value="Додати/змінити фото" id="page_addPhoto" />
 </div>
 <div id="page_reit" class="col-md-12">100%</div>
 <div id="page_gifts" class="col-md-12">
 	<label>Подарунки</label><br />
 	<ul>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
+		<li class="col-md-4"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
+		<li class="col-md-4"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
+		<li class="col-md-4"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
 	</ul>
 </div>
 <div id="page_friends" class="col-md-12">
@@ -20,44 +20,44 @@
             for($i = 0; $i < $data['user_friends_count'] - 1; $i++)
             {
         ?>
-		  <li class="col-md-4"><img src="./img/<?php echo $data['user_friends_avatar'][$i]; ?>" alt="Image not found"><label><?php echo $data['user_friends_name'][$i]; ?></label></li>
+		  <li class="col-md-4"><img src="/img/<?php echo $data['user_friends_avatar'][$i]; ?>" alt="Image not found"><label><?php echo $data['user_friends_name'][$i]; ?></label></li>
 		<?php } ?>
 	</ul>
 </div>
 <div id="page_friends_online" class="col-md-12">
 	<label>Друзі онлайн</label>
 	<ul>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
-		<li class="col-md-4"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
+		<li class="col-md-4"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
+		<li class="col-md-4"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
+		<li class="col-md-4"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
+		<li class="col-md-4"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
+		<li class="col-md-4"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
+		<li class="col-md-4"><ig src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"><label><?php echo $data['main_name']; ?></label></li>
 	</ul>
 </div>
 <div id="page_interest_pages" class="col-md-12">
 	<label>Цікаві сторінки</label>
 	<ul>
-		<li class="col-md-12"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
-		<li class="col-md-12"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
-		<li class="col-md-12"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
-		<li class="col-md-12"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
-		<li class="col-md-12"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
-		<li class="col-md-12"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
+		<li class="col-md-12"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
+		<li class="col-md-12"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
+		<li class="col-md-12"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
+		<li class="col-md-12"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
+		<li class="col-md-12"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
+		<li class="col-md-12"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
 	</ul>
 </div>
 <div id="page_photo" class="col-md-12">
 	<label>Фотоальбоми</label>
 	<ul>
-		<li class="col-md-12"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
-		<li class="col-md-12"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
+		<li class="col-md-12"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
+		<li class="col-md-12"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
 	</ul>
 </div>
 <div id="page_video" class="col-md-12">
 	<label>Відеозаписи</label>
 	<ul>
-		<li class="col-md-12"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
-		<li class="col-md-12"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
+		<li class="col-md-12"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
+		<li class="col-md-12"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found"></li>
 	</ul>
 </div>	
 </div>
@@ -65,8 +65,8 @@
 <div id="page_right" style="float: right;" class="col-md-8">
 <div id="page_info" class="col-md-12">
     <div class="col-md-12" id="page_info_top">
-    	<div id="page_info_name" class="col-md-5"><?php echo $data['main_name']; ?> <?php echo $data['main_lastName']; ?></div>
-    	<div id="page_info_lastOn" class="col-md-7">Був на сайті 20 хвилин назад</div>
+    	<div id="page_info_name" class="col-md-10"><?php echo $data['main_name']; ?> <?php echo $data['main_lastName']; ?></div>
+    	<div id="page_info_lastOn" class="col-md-1"></div>
     </div>
     <div class="col-md-12" id="page_info_status"><?php echo $data['main_status']; ?></div>
     <div id="page_info_onshow" class="col-md-12">
@@ -149,14 +149,14 @@
 </div>
 <div id="page_4_photo" class="col-md-12">
 	<label>Фотографії <?php echo $data['main_name']; ?></label><br />
-	<img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found!" class="col-md-3">
-	<img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found!" class="col-md-3">
-	<img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found!" class="col-md-3">
-	<img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not found!" class="col-md-3">
+	<img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found!" class="col-md-3">
+	<img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found!" class="col-md-3">
+	<img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found!" class="col-md-3">
+	<img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found!" class="col-md-3">
 </div>
 <div id="page_add_wall" class="col-md-12">
 	<ul>
-		<li class="col-md-1"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Img" /></li>
+		<li class="col-md-1"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Img" /></li>
 		<li class="col-md-9"><input type="text" placeholder="Додати запис"></li>
 		<li class="col-md-2"><i>P</i><i>V</i><i>M</i></li>
 	</ul>
@@ -164,7 +164,7 @@
 
 <div id="page_wall" class="col-md-12">
     <?php  
-    for($i = 0; $i < $data['user_wall_count']; $i++)
+    for($i = $data['user_wall_count'] - 1; $i >= 0 ; $i--)
     {
     ?>
     <div class="page_wall_view col-md-12">
@@ -182,7 +182,7 @@
             ';
         }
     ?>
-	<div id="page_wall_avatar" class="col-md-2"><a href="my_page/<?php echo $i; ?>"><img src="./img/<?php echo $data['sys_avatar']; ?>" alt="Image not"></a></div>
+	<div id="page_wall_avatar" class="col-md-2"><a href="my_page/<?php echo $i; ?>"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not"></a></div>
 	<div id="page_wall_authDate" class="col-md-6"><?php echo $data['main_name']; ?> <?php echo $data['main_lastName']; ?> <br /> <?php echo $data['user_wall_date'][$i]; ?></div>
     <div id="page_wall_drop">D</div>
 	<div id="page_wall_text" class="col-md-12"><?php echo $data['user_wall_text'][$i]; ?></div>

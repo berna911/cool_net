@@ -3,30 +3,31 @@ class Route
 {
 	static function start()
 	{
-		// контроллер и действие по умолчанию
 		$controller_name = 'my_page';
 		$action_name = 'default';
+		$params = array();
 		
 		$routes = explode('/', $_SERVER['REQUEST_URI']);
 
-		// получаем имя контроллера
 		if ( !empty($routes[1]) )
 		{	
 			$controller_name = $routes[1];
 		}
 		
-		// получаем имя экшена
 		if ( !empty($routes[2]) )
 		{
 			$action_name = $routes[2];
 		}
 
-		// добавляем префиксы
+		if( !empty($routes[3]) )
+		{
+			$params[0] = $routes[3]; 
+		}
+
 		$model_name = 'Model_'.$controller_name;
 		$controller_name = 'Controller_'.$controller_name;
 		$action_name = 'action_'.$action_name;
 
-		// подцепляем файл с классом модели (файла модели может и не быть)
 
 		$model_file = strtolower($model_name).'.php';
 		$model_path = "./models/".$model_file;
@@ -35,7 +36,6 @@ class Route
 			include "./models/".$model_file;
 		}
 
-		// подцепляем файл с классом контроллера
 		$controller_file = strtolower($controller_name).'.php';
 		$controller_path = "./controllers/".$controller_file;
 		if(file_exists($controller_path))
@@ -44,25 +44,22 @@ class Route
 		}
 		else
 		{
-			/*
-			правильно было бы кинуть здесь исключение,
-			но для упрощения сразу сделаем редирект на страницу 404
-			*/
 			Route::ErrorPage404();
 		}
 		
-		// создаем контроллер
 		$controller = new $controller_name;
 		$action = $action_name;
 		
-		if(method_exists($controller, $action))
+		if( method_exists($controller, $action) && $params[0] != null )
 		{
-			// вызываем действие контроллера
-			$controller->$action();
+			$controller -> $action( $params );
+		}
+		else if( method_exists($controller, $action) )
+		{
+			$controller -> $action();
 		}
 		else
 		{
-			// здесь также разумнее было бы кинуть исключение
 			Route::ErrorPage404();
 		}
 	

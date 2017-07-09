@@ -1,11 +1,13 @@
 <title>Повідомлення</title>
 <div id="messages_cont" class="col-md-8">
+   <?php for( $i = 0; $i < $data["counter"]; $i++ ){ ?>
 	<div class="messages_list">
-		<li><img src="" alt="Img" /></li>
-		<li>Max</li>
-		<li>1:19</li><br />
-		<li style="margin-left: 35px;">It's message</li>
+		<li><img src="/img/<?php echo $data['avatar'][$i]; ?>" alt="Img" /></li>
+		<li><?php echo $data["name"][$i]; ?></li>
+		<li><?php echo $data["date"][$i]; ?></li><br />
+		<li style="margin-left: 35px;"><?php echo $data["text"][$i]; ?></li>
 	</div>
+   <?php } ?>	
 
 	<div id="messages_new_message" class="col-md-12">
 		<li class="col-md-1">P</li></textarea>

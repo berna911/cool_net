@@ -1,7 +1,7 @@
 <?php
 class Model_my_page extends Model
 {
-	public function get_data()
+	public function get_data( $params = null )
 	{
 
 		$data = array();
@@ -14,12 +14,7 @@ class Model_my_page extends Model
 		$user_fr = array();
 		$user_fr_main;
 
-		$user_wall_date;
-		$user_wall_author;
-		$user_wall_date;
-		$user_wall_likes;
-
-		$users = DB::getInstance() -> query('SELECT * FROM us_main WHERE id = 3');
+		$users = DB::getInstance() -> query('SELECT * FROM us_main WHERE id = '.$params[0]);
 		foreach ($users -> results() as $user);
 
 		$user_sr = DB::getInstance() -> query('SELECT * FROM us_srObr WHERE user_id = '.$user -> id);
@@ -34,25 +29,13 @@ class Model_my_page extends Model
 		$user_war = DB::getInstance() -> query('SELECT * FROM us_war WHERE user_id = '.$user -> id);
 		foreach ($user_war -> results() as $users_war);
 
-		$user_friends = DB::getInstance() -> query('SELECT rel_friends FROM us_main WHERE id=3');
+		$user_friends = DB::getInstance() -> query('SELECT rel_friends FROM us_main WHERE id = '.$params[0]);
 		foreach ($user_friends -> results() as $friends) {
 			$user_fr_single = $friends -> rel_friends;
 		}
 
-		$counter = DB::getInstance() -> query('SELECT * FROM us_posts WHERE author = 3') -> count();
-		$user_wall = DB::getInstance() -> query('SELECT * FROM us_posts WHERE author = 3');
-		
-		for($i = 0; $i < $counter; $i++)
-		{
-			foreach ($user_wall -> results() as $walls)
-			{
-				$user_walls[$i]['date'] = $walls -> date;
-				$user_walls[$i]['author'] = $walls -> author;
-				$user_walls[$i]['text'] = $walls -> text;
-				$user_walls[$i]['likes'] = $walls -> likes;
-			}
-		}
-	
+		$counter = DB::getInstance() -> query('SELECT * FROM us_posts WHERE author =  = '.$params[0]) -> count();
+		$user_wall = DB::getInstance() -> query('SELECT * FROM us_posts WHERE author =  = '.$params[0]) -> results();	
 
 		$data = array(
 										  'id' => $user -> id,
@@ -132,13 +115,14 @@ class Model_my_page extends Model
 										  'user_wall_likes' => array(),
 										  'user_wall_count' => $counter
 										);
-
+			$counterr = 6;
 			for($i = 0; $i < $counter; $i++)
 			{
-					$data['user_wall_author'][$i] = $user_walls[$i]['author'];
-					$data['user_wall_date'][$i] = $user_walls[$i]['date'];
-					$data['user_wall_text'][$i] = $user_walls[$i]['text'];
-					$data['user_wall_likes'][$i] = $user_walls[$i]['likes'];
+					$data['user_wall_author'][$i] = $user_wall[$counterr] -> author;
+					$data['user_wall_date'][$i] = $user_wall[$counterr] -> date;
+					$data['user_wall_text'][$i] = $user_wall[$counterr] -> text;
+					$data['user_wall_likes'][$i] = $user_wall[$counterr] -> likes;
+					$counterr ++;
 			}
 
 			$user_fr = explode(";", $user_fr_single);

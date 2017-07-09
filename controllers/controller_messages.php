@@ -7,9 +7,9 @@ class Controller_messages extends Controller
 		$this -> view = new View();
 	}
 
-	function action_default()
+	function action_default($params)
 	{
-		$data = $this -> model -> get_data();
+		$data = $this -> model -> get_data($params[0]);
 		$this -> view -> generate("messages_view.php", "vk.php", $data);
 	}
 }
