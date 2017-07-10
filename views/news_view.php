@@ -8,12 +8,12 @@
 		<li class="news_add_li"><i>M</i></li>
 	
 </div>
-<?php for( $i = 1; $i < $data['author_count'] - 1; $i++ ){?>
+<?php for( $i = 0; $i < $data['author_count']; $i++ ){?>
 <div id="news_list" class="col-md-12">
-	<div class="news_list_avatar"><img src="" alt="Image not"></div>
-	<div id="news_list_authDate"><?php echo $data['author_name'][$i]; ?> berna<br />27 червня 19:41</div>
-	<div id="news_list_drop">D</div>
-	<div id="news_list_text"><?php echo $data['news_text'][$i]; ?></div>
+	<div class="news_list_avatar col-md-2"><img src="/img/<?php echo $data['author_avatar'][$i]; ?>" alt="Image not"></div>
+	<div id="news_list_authDate" class="col-md-8"><?php echo $data['author_name'][$i]; ?> <?php echo $data["author_lastName"][$i]; ?><br />27 червня 19:41</div>
+	<div id="news_list_drop" class="col-md-1">D</div>
+	<div id="news_list_text" class="col-md-12"><?php echo $data['news_text'][$i]; ?></div>
 	<div id="news_list_bottom" class="col-md-12">
         <ul>
             <li>Подобається</li>

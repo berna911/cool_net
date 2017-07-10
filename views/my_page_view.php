@@ -1,4 +1,5 @@
 <title>Max Berna</title>
+<?php //echo "<pre style='color: #fff'>", print_r(DB::getInstance() -> query("SELECT id FROM us_main WHERE id = 3") -> results()), "</pre>"; ?>
 <div id="page_left" class="col-md-4">
 <div id="page_avatar" class="col-md-12">
 	<img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found" class="col-md-12">
@@ -20,7 +21,7 @@
             for($i = 0; $i < $data['user_friends_count'] - 1; $i++)
             {
         ?>
-		  <li class="col-md-4"><img src="/img/<?php echo $data['user_friends_avatar'][$i]; ?>" alt="Image not found"><label><?php echo $data['user_friends_name'][$i]; ?></label></li>
+		  <a href="/my_page/user/<?php echo $data['user_friends_id'][$i]; ?>"><li class="col-md-4"><img src="/img/<?php echo $data['user_friends_avatar'][$i]; ?>" alt="Image not found"><label><?php echo $data['user_friends_name'][$i]; ?></label></li></a>
 		<?php } ?>
 	</ul>
 </div>
@@ -149,10 +150,17 @@
 </div>
 <div id="page_4_photo" class="col-md-12">
 	<label>Фотографії <?php echo $data['main_name']; ?></label><br />
-	<img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found!" class="col-md-3">
-	<img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found!" class="col-md-3">
-	<img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found!" class="col-md-3">
-	<img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found!" class="col-md-3">
+    <?php
+       if($data['us_photo_count'] >= 3)
+       { 
+        for( $i = 3; $i >= 0; $i-- ){ ?>
+        <img src="/img/<?php echo $data["us_photo"][$i]; ?>" alt="Image not found!" class="col-md-3">
+    <?php }
+          }else if($data['us_photo_count'] < 3){
+            for( $i = $data['us_photo_count'] - 1; $i >= 0; $i-- ){
+    ?>      
+    <img src="/img/<?php echo $data["us_photo"][$i]; ?>" alt="Image not found!" class="col-md-3">
+    <?php }} ?>
 </div>
 <div id="page_add_wall" class="col-md-12">
 	<ul>
@@ -164,7 +172,7 @@
 
 <div id="page_wall" class="col-md-12">
     <?php  
-    for($i = $data['user_wall_count'] - 1; $i >= 0 ; $i--)
+    for($i = $data['user_wall_count']; $i >= 0 ; $i--)
     {
     ?>
     <div class="page_wall_view col-md-12">

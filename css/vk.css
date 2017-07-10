@@ -203,13 +203,13 @@ body
 	margin-left: -40px;
 }
 
-#page_friends > ul > li
+#page_friends > ul > a > li
 {
 	display: inline-block;
 	margin-bottom: 10px;
 }
 
-#page_friends > ul > li > img
+#page_friends > ul > a > li > img
 {
 	height: 35px;
 }
@@ -573,9 +573,16 @@ body
 	margin-right: 10px;
 }
 
-#news_list_avatar > img
+#news_list_avatar
 {
 	height: 40px;
+	width: 40px;
+}
+
+.news_list_avatar > img
+{
+	height: 40px;
+	width: 40px;
 }
 
 #news_list_text
@@ -584,8 +591,6 @@ body
 	margin-bottom: 5px;
 	padding-bottom: 5px;
 	border-bottom: 1px solid gray;
-	border-left: 1px solid gray;
-	border-right: 1px solid gray;
 }
 
 #news_list_bottom > ul
