@@ -3,9 +3,18 @@ class Route
 {
 	static function start()
 	{
-		$controller_name = 'my_page';
-		$action_name = 'default';
-		$params = array();
+		if( $_COOKIE['uid'] != null || $_COOKIE['uid'] != "" )
+		{
+			$controller_name = 'my_page';
+			$action_name = 'default';
+			$params = array();
+		}
+		else
+		{
+			$controller_name = 'auth';
+			$action_name = 'default';
+			$params = array();
+		}
 		
 		$routes = explode('/', $_SERVER['REQUEST_URI']);
 

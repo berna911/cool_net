@@ -154,38 +154,10 @@ body
 	height: 70px;
 }
 
-#page_add_wall
-{
-	padding: 5px;
-	background: #2C2D2E;
-}
-
 #page_left
 {
 	margin-left: -10px;
 	margin-right: 10px;
-}
-
-#page_add_wall > ul
-{
-	margin-left: -40px;
-}
-
-#page_add_wall > ul > li
-{
-	display: inline-block;
-}
-
-#page_add_wall > ul > li > input
-{
-	background: #2C2D2E;
-	color: #fff;
-	width: 100%;
-}
-
-#page_add_wall > ul > li > img
-{
-	height: 25px;
 }
 
 #page_reit
@@ -317,6 +289,55 @@ body
 #page_video > ul > li > img
 {
 	height: 100px;
+}
+
+#page_add_wall
+{
+	padding: 5px;
+	background: #2C2D2E;
+}
+
+#page_add_wall > li
+{
+	display: inline-block;
+}
+
+#page_add_wall > li > input
+{
+	border: 1px solid gray;
+	background: #2C2D2E;
+	color: #fff;
+	width: 100%;
+}
+
+#page_add_wall > li > img
+{
+	height: 25px;
+}
+
+#page_add_wall > div > li
+{
+	display: block;
+}
+
+#page_add_wall_textarea
+{
+	margin-top: 10px;
+	background: #2C2D2E;
+	resize: none;
+}
+
+#page_add_wall_submit
+{
+	background: gray;
+	color: #fff;
+	text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+	border: 1px solid #fff;
+}
+
+#page_add_wall_hide
+{
+	display: none;
 }
 
 .page_wall_view
@@ -722,6 +743,15 @@ body
 	padding: 3px;
 	width: 100%;
 	resize: none;
+}
+
+#messages_new_message_button_li
+{
+	background: gray;
+	color: #fff;
+	text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+	border: 1px solid #fff;
+	float: right;
 }
 
 #messages_set

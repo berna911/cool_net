@@ -22,7 +22,7 @@ class Model_dialogs extends Model
 		for( $i = 0; $i < $dialogs_count; $i++ )
 		{
 			for( $z = 0; $z < count($users[$i]); $z++ )
-			if( $users[$i][$z] == 3 )
+			if( $users[$i][$z] == $_COOKIE['uid'] )
 			{
 				if( $z == 0 )
 				{

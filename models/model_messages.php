@@ -6,6 +6,7 @@ class Model_messages extends Model
 		$mes = DB::getInstance() -> query("SELECT * FROM us_messages WHERE dialog_id = ".$param);
 
 		$data = array(
+					  "dialog_id" => $param,
 					  "text" => array(),
 					  "date" => array(),
 					  "name" => array(),

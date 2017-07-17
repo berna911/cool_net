@@ -1,5 +1,5 @@
 <title>Max Berna</title>
-<?php //echo "<pre style='color: #fff'>", print_r(DB::getInstance() -> query("SELECT id FROM us_main WHERE id = 3") -> results()), "</pre>"; ?>
+<?php //echo "<pre style='color: #fff'>", print_r(DB::getInstance() -> query("SELECT id FROM us_main WHERE id = 3") -> results()), "</pre>"; echo $data; ?>
 <div id="page_left" class="col-md-4">
 <div id="page_avatar" class="col-md-12">
 	<img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found" class="col-md-12">
@@ -101,25 +101,29 @@
     	</div>
     	<div id="page_info_career" class="col-md-12">
     		<label class="page_info_title">Кар'єра</label><br />
-
-    		<label class="col-md-6">Місце роботи: </label><label class="col-md-6"><?php echo $data['car_jobPlace']; ?>, <?php echo $data['car_start']; ?> - <?php echo $data['car_end']; ?>, <?php echo $data['car_country']; ?>, <?php echo $data['car_dol']; ?></label><br />
+            <?php for( $i = 0; $i < $data['car_counter']; $i++ ){ ?>
+    		<label class="col-md-6">Місце роботи: </label><label class="col-md-6"><?php echo $data['car_jobPlace'][$i]; ?>, <?php echo $data['car_start'][$i]; ?> - <?php echo $data['car_end'][$i]; ?>, <?php echo $data['car_country'][$i]; ?>, <?php echo $data['car_dol'][$i]; ?></label><br />
+            <?php } ?>
     	</div>
    		 <div id="page_info_obr" class="col-md-12">
     		<label class="page_info_title">Навчання</label><br />
-
-            <label class="col-md-6">Місце рзташування: </label><label class="col-md-6"><?php echo $data['high_country']; ?>, <?php echo $data['high_city']; ?></label><br />
-    		<label class="col-md-6">Внз: </label><label class="col-md-6"><?php echo $data['high_vuz']; ?></label><br />
-    		<label class="col-md-6">Факультет: </label><label class="col-md-6"><?php echo $data['high_fakultet']; ?></label><br />
-    		<label class="col-md-6">Кафедра: </label><label class="col-md-6"><?php echo $data['']; ?></label><br />
-    		<label class="col-md-6">Форма навчання: </label><label class="col-md-6"><?php echo $data['high_study_form']; ?></label><br />
-    		<label class="col-md-6">Статус: </label><label class="col-md-6"><?php echo $data['high_status']; ?></label><br />
-    		<label class="col-md-6">Школа: </label><label class="col-md-6"><?php echo $data['sr_country']; ?>, <?php echo $data['sr_school']; ?>, <?php echo $data['sr_start']; ?> - <?php echo $data['sr_end']; ?>, <?php echo $data['sr_date']; ?>, <?php echo $data['sr_class']; ?>, <?php echo $data['sr_specialization']; ?></label><br />
+            <?php for( $i = 0; $i < $data['high_counter']; $i++ ){ ?>
+            <label class="col-md-6">Місце рзташування: </label><label class="col-md-6"><?php echo $data['high_country'][$i]; ?>, <?php echo $data['high_city'][$i]; ?></label><br />
+    		<label class="col-md-6">Внз: </label><label class="col-md-6"><?php echo $data['high_vuz'][$i]; ?></label><br />
+    		<label class="col-md-6">Факультет: </label><label class="col-md-6"><?php echo $data['high_fakultet'][$i]; ?></label><br />
+    		<label class="col-md-6">Кафедра: </label><label class="col-md-6"><?php echo $data[''][$i]; ?></label><br />
+    		<label class="col-md-6">Форма навчання: </label><label class="col-md-6"><?php echo $data['high_study_form'][$i]; ?></label><br />
+    		<label class="col-md-6">Статус: </label><label class="col-md-6"><?php echo $data['high_status'][$i]; ?></label><br />
+            <?php } for( $i = 0; $i < $data['sr_counter']; $i++ ){ ?>
+    		<label class="col-md-6">Школа: </label><label class="col-md-6"><?php echo $data['sr_country'][$i]; ?>, <?php echo $data['sr_school'][$i]; ?>, <?php echo $data['sr_start'][$i]; ?> - <?php echo $data['sr_end'][$i]; ?>, <?php echo $data['sr_date'][$i]; ?>, <?php echo $data['sr_class'][$i]; ?>, <?php echo $data['sr_specialization'][$i]; ?></label><br />
+            <? } ?>
     	</div>
 
     	<div id="page_info_war" class="col-md-12">
     		<label class="page_info_title">Воєнна служба</label><br />
-
-    		<label class="col-md-6">Військова частина: </label><label class="col-md-6"><?php echo $data['war_country']; ?>, <?php echo $data['war_chast']; ?> <?php echo $data['war_start']; ?> - <?php echo $data['war_end']; ?></label>	
+            <?php for( $i = 0; $i < $data['war_counter']; $i++ ){ ?>
+    		<label class="col-md-6">Військова частина: </label><label class="col-md-6"><?php echo $data['war_country'][$i]; ?>, <?php echo $data['war_chast'][$i]; ?> <?php echo $data['war_start'][$i]; ?> - <?php echo $data['war_end'][$i]; ?></label>	
+            <?php } ?>
     	</div>
 
     	<div id="page_info_lifePos" class="col-md-12">
@@ -162,17 +166,19 @@
     <img src="/img/<?php echo $data["us_photo"][$i]; ?>" alt="Image not found!" class="col-md-3">
     <?php }} ?>
 </div>
+<?php if($data['id'] == $_COOKIE['uid']){ ?>
 <div id="page_add_wall" class="col-md-12">
-	<ul>
 		<li class="col-md-1"><img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Img" /></li>
-		<li class="col-md-9"><input type="text" placeholder="Додати запис"></li>
+		<li class="col-md-9"><textarea id="page_add_wall_textarea" placeholder="Поділіться своїми думками" cols="37" rows="1"></textarea></li>
 		<li class="col-md-2"><i>P</i><i>V</i><i>M</i></li>
-	</ul>
+        <div class="col-md-12" id="page_add_wall_hide">
+            <li style="float: right" class="col-md-6"><button id="page_add_wall_submit">Додати запис</button></li>
+        </div>
 </div>
-
+<?php } ?>
 <div id="page_wall" class="col-md-12">
     <?php  
-    for($i = $data['user_wall_count']; $i >= 0 ; $i--)
+    for($i = $data['user_wall_count'] - 1; $i >= 0 ; $i--)
     {
     ?>
     <div class="page_wall_view col-md-12">

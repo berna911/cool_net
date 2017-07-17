@@ -38,6 +38,11 @@ class DB{
 		return $this;
 	}
 
+	public function no_returns($sql)
+	{
+		$this -> _query = $this -> _mysqli -> query($sql);
+	}
+
 	public function results()
 	{
 		return $this -> _results;

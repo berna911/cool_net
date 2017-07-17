@@ -11,8 +11,9 @@
 
 	<div id="messages_new_message" class="col-md-12">
 		<li class="col-md-1">P</li></textarea>
-		<li class="col-md-10"><textarea placeholder="Пишіть повідомлення" rows="2"></textarea></li>
+		<li class="col-md-10"><textarea placeholder="Пишіть повідомлення" rows="2" id="messages_new_message_textarea"></textarea></li>
 		<li class="col-md-1">L</li>
+		<li class="col-md-3" style="float: right;"><button idd="<?php echo $data['dialog_id']; ?>" id="messages_new_message_button_li">Надіслати</button></li>
 	</div>
 </div>
 

@@ -8,7 +8,7 @@ class Controller_my_page extends Controller
 	}
 	function action_default()
 	{	
-		$data = $this->model->get_data( array(3) );
+		$data = $this->model->get_data( array($_COOKIE['uid']) );
 		$this->view->generate('my_page_view.php', 'vk.php', $data);
 	}
 
