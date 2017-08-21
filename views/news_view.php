@@ -10,8 +10,8 @@
 </div>
 <?php for( $i = 0; $i < $data['author_count']; $i++ ){?>
 <div id="news_list" class="col-md-12">
-	<div class="news_list_avatar col-md-2"><img src="/img/<?php echo $data['author_avatar'][$i]; ?>" alt="Image not"></div>
-	<div id="news_list_authDate" class="col-md-8"><?php echo $data['author_name'][$i]; ?> <?php echo $data["author_lastName"][$i]; ?><br /><?php echo $data['news_date'][$i]; ?></div>
+	<div class="news_list_avatar col-md-2"><a href="/my_page/user/<?php echo $data['id'][$i]; ?>"><img src="/img/<?php echo $data['author_avatar'][$i]; ?>" alt="Image not"></a></div>
+	<div id="news_list_authDate" class="col-md-8"><a href="/my_page/user/<?php echo $data['id'][$i]; ?>"><?php echo $data['author_name'][$i]; ?> <?php echo $data["author_lastName"][$i]; ?></a><br /><?php echo $data['news_date'][$i]; ?></div>
 	<div id="news_list_drop" class="col-md-1">D</div>
 	<div id="news_list_text" class="col-md-12"><?php echo $data['news_text'][$i]; ?></div>
 	<div id="news_list_bottom" class="col-md-12">

@@ -3,8 +3,11 @@
 <div id="page_left" class="col-md-4">
 <div id="page_avatar" class="col-md-12">
 	<img src="/img/<?php echo $data['sys_avatar']; ?>" alt="Image not found" class="col-md-12">
-	<input type="button" value="Додати/змінити фото" id="page_addPhoto" />
+	<?php
+        if( $data['id'] == $_COOKIE['uid'] ){
+    ?><a href="#add_photo" id="page_addPhoto">Додати/змінити фото</a><?php } ?>
 </div>
+
 <div id="page_reit" class="col-md-12">100%</div>
 <div id="page_gifts" class="col-md-12">
 	<label>Подарунки</label><br />

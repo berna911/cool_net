@@ -18,6 +18,7 @@ class Model_friends extends Model
 		}
 
 		$data = array(
+						'id' => array(),
 						'name' => array(),
 						'lastName' => array(),
 						'avatar' => array(),
@@ -30,8 +31,9 @@ class Model_friends extends Model
 
 			for($i = 0; $i < count($user_fr) - 1; $i++)
 			{
-				$user_fr_main[$i] = DB::getInstance() -> query('SELECT main_name, main_lastName, sys_avatar FROM us_main WHERE id='.$user_fr[$i]);
+				$user_fr_main[$i] = DB::getInstance() -> query('SELECT id, main_name, main_lastName, sys_avatar FROM us_main WHERE id='.$user_fr[$i]);
 				foreach ($user_fr_main[$i] -> results() as $user_fr_mainn) {
+					$data['id'][$i] = $user_fr_mainn -> id;
 					$data['name'][$i] = $user_fr_mainn -> main_name;
 					$data['lastName'][$i] = $user_fr_mainn -> main_lastName;
 					$data['avatar'][$i] = $user_fr_mainn -> sys_avatar;

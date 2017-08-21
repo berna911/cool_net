@@ -3,9 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="/libs/bootstrap.min.css">
+	<link rel="stylesheet" href="./libs/jquery.Jcrop.css">
 	<link rel="stylesheet" href="/css/vk.css">
+	<link rel="stylesheet" href="/css/modal.css">
+
+	<script src="/libs/jquery.js"></script>
+	<script src="/libs/jquery.Jcrop.js"></script>
+	<script src="/js/basic.js"></script>
+	<script src="/js/modal.js"></script>
 </head>
 <body>
+<?php include "include/modal.php"; ?>
        <div id="top_header" class="container-fluid">
        	 <div id="top_header_logo"><img src="" alt="Image not found!"></div>
        	 <div id="top_header_menu">
@@ -36,7 +44,5 @@
 			<?php include 'views/'.$content_view; ?>
 		 </div>	
 	   </div>	
-	<script src="/libs/jquery.js"></script>
-	<script src="/js/basic.js"></script>
 </body>
 </html>

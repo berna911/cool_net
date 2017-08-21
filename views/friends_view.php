@@ -17,7 +17,7 @@
 		<?php for( $i = 0; $i < $data['counter'] - 1; $i++ ){ ?>
 		<ul>
 			<li class="col-md-2"><a><img src="./img/<?php echo $data['avatar'][$i]; ?>" alt="Image!" /></a></li>
-			<li><a style="font-size: 18px"><?php echo $data['name'][$i]; ?> <?php echo $data['lastName'][$i]; ?></a><br /><a>Написати повідомлення</a></li>
+			<li><a href="/my_page/user/<?php echo $data['id'][$i]; ?>" style="font-size: 18px" id="friends_view_name"><?php echo $data['name'][$i]; ?> <?php echo $data['lastName'][$i]; ?></a><br /><a>Написати повідомлення</a></li>
 			<li style="float: right;"><i>D</i></li>
 		</ul>
 		<?php } ?>

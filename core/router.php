@@ -18,6 +18,14 @@ class Route
 		
 		$routes = explode('/', $_SERVER['REQUEST_URI']);
 
+		/*$modals = stristr($_SERVER['REQUEST_URI'], '#');
+		var_dump(parse_url($_SERVER['SERVER_NAME'], PHP_URL_FRAGMENT))
+		echo "<pre style='color: #fff' >".$_SERVER['QUERY_STRING']."</pre>";
+		if( !empty($modals[0]) )
+		{
+			echo "<pre style='color: #fff' >".$modals[0]."</pre>";
+		}*/
+
 		if ( !empty($routes[1]) )
 		{	
 			$controller_name = $routes[1];

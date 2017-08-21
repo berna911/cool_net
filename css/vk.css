@@ -73,6 +73,8 @@ body
 
 #page_addPhoto
 {
+	text-decoration: none;
+	padding: 3px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	margin-left: 25px;
@@ -441,8 +443,12 @@ body
 {
 	cursor: pointer;
 	color: #fff;
-	text-shadow: 1px 1px 1px gray, 0 0 1em gray;
 	height: 70px;
+}
+
+#friends_view_name
+{
+	text-shadow: 1px 1px 1px gray, 0 0 1em gray;
 }
 
 #friends_view > ul > li > a > img
@@ -577,10 +583,6 @@ body
 	height: 38px;
 }
 
-#news_add > li > img
-{
-}
-
 #news_list
 {
 	margin-right: 10px;
@@ -600,7 +602,7 @@ body
 	width: 40px;
 }
 
-.news_list_avatar > img
+.news_list_avatar > a > img
 {
 	height: 40px;
 	width: 40px;
@@ -622,6 +624,12 @@ body
 #news_list_bottom > ul > li
 {
 	display: inline-block;
+}
+
+#news_list_authDate > a
+{
+	color: #fff;
+	text-shadow: 1px 1px 1px gray, 0 0 1em gray
 }
 
 #news_vozm
@@ -708,6 +716,11 @@ body
 	border-left: 5px solid gray;
 }
 
+#dialog_list_name
+{
+	
+}
+
 #messages_cont
 {
 	background: #2C2D2E;
@@ -719,9 +732,15 @@ body
 	display: inline-block;
 }
 
-.messages_list > li > img
+.messages_list > li > a > img
 {
 	height: 25px;
+}
+
+#messages_list_name > a
+{
+	color: #fff;
+	text-shadow: 1px 1px 1px gray, 0 0 1em gray;
 }
 
 #messages_new_message
